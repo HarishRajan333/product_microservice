@@ -25,5 +25,10 @@ public class CategoryController {
     public ApiResponse getCategorys() {
         return categoryService.getCategory();
     }
+    
+     @GetMapping("/gets")
+    public ApiResponse getCategoryss() {
+        return categoryService.getCategory();
+    }
 
 }
