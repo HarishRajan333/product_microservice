@@ -1,5 +1,8 @@
 FROM  openjdk:22-slim
-RUN apt install -y maven
+RUN apt-get update && \
+    apt-get install -y maven && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 RUN mvn clean package
 COPY  target/*.jar /app/
